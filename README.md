@@ -3,12 +3,7 @@
 Contains all items for the 3D collaborative game project.
 
 Should contain:
--unity project and all essential files
--assets
-  -models
-  -textures
-  -sound
--
+unity project and all essential files [assets, models, textures, sound]
 
 
 !!! PLEASE DO NOT DELETE ANY FILES IN THE REPOSITORY UNLESS YOU KNOW IT WILL NOT BREAK THE PROJECT OR IT IS SOMEBODY ELSES WORK !!!

@@ -3,9 +3,10 @@ using System.Collections.Generic;
 using UnityEngine;
 
 /*
-*   Created By: Finn Dudley
-*   Last Edited: 18/11/2020, By Finn Dudley
+*   Created: 18/11/2020, By Finn Dudley
+*   Last Edited: 21/11/2020, By Finn Dudley
 */
+
 public class PlayerInteraction : MonoBehaviour
 {
     [Header("Player Attributes")]
@@ -62,26 +63,33 @@ public class PlayerInteraction : MonoBehaviour
             ObjectType objType = hit.collider.gameObject.GetComponent<ObjectType>();
             if(objType != null){
                 
-                
                 Vector2 grabIconTempPos = playerCam.WorldToScreenPoint(hit.transform.position);
                 grabIconRectTransform.anchoredPosition = (grabIconTempPos - canvasRectTransform.sizeDelta / 2f); // TEMP most likely need changing for performance
-                if(grabIcon.activeSelf == false) grabIcon.SetActive(true);
-                
-                switch (objType.selectedObjectType)
-                {
+                if(!grabIcon.activeSelf) grabIcon.SetActive(true);
+                if(Input.GetButtonDown("Interact")){
+                    switch (objType.selectedObjectType)
+                    {
                     case ObjectTypes.Task:
-
+                        // Start to Complete the task
+                        Debug.Log("Interacted with " + objType.selectedObjectType.ToString());
+                        break;
+                    case ObjectTypes.Equipment:
+                        // Start interacting with ships Equipment.
+                        Debug.Log("Interacted with " + objType.selectedObjectType.ToString());
                         break;
                     case ObjectTypes.Item:
-                        // If it is a pickable item.
+                        // If it is a pickable item. Add to Inventory
+                        Debug.Log("Interacted with " + objType.selectedObjectType.ToString());
                         break;
                     default:
-                    break;
+                        break;
+                    }
                 }
+                
             }
             
         }
-        else if (grabIcon.activeSelf == true) grabIcon.SetActive(false);   
+        else if (grabIcon.activeSelf) grabIcon.SetActive(false);   
     }
 #endregion
 }

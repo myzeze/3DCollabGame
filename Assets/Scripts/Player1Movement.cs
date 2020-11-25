@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class Player1Movement : MonoBehaviour
 {
+    public GameObject playerCam;
+
     public float speed = 25.0F;
     public float jumpSpeed = 8.0F;
     public float gravity = 20.0F;
@@ -36,7 +38,7 @@ public class Player1Movement : MonoBehaviour
 
         }
         turner = Input.GetAxis("Mouse X") * sensitivity;
-        looker = -Input.GetAxis("Mouse Y") * sensitivity;
+        looker = Mathf.Clamp(-Input.GetAxis("Mouse Y") * sensitivity, -80, 80);
         if (turner != 0)
         {
             //Code for action on mouse moving right
@@ -45,7 +47,8 @@ public class Player1Movement : MonoBehaviour
         if (looker != 0)
         {
             //Code for action on mouse moving right
-            transform.eulerAngles += new Vector3(looker, 0, 0);
+            playerCam.transform.eulerAngles += new Vector3(looker, 0, 0);
+            
         }
         //Applying gravity to the controller
         moveDirection.y -= gravity * Time.deltaTime;

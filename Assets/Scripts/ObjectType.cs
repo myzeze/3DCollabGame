@@ -7,6 +7,7 @@ using UnityEngine;
 *   Last Edited: 21/11/2020, By Finn Dudley
 */
 
+
 public enum ObjectTypes
 {
     Task,
@@ -14,7 +15,8 @@ public enum ObjectTypes
     Equipment
 }
 
+
 public class ObjectType : MonoBehaviour
 {
-    public ObjectTypes selectedObjectType;
+    public ObjectTypes selectedObjectType_e;
 }

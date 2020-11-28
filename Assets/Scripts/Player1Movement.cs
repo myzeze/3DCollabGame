@@ -4,55 +4,57 @@ using UnityEngine;
 
 public class Player1Movement : MonoBehaviour
 {
-    public GameObject playerCam;
+    [Header("Object Variables")]
+    public GameObject playerCam_go;
 
-    public float speed = 25.0F;
-    public float jumpSpeed = 8.0F;
-    public float gravity = 20.0F;
-    private Vector3 moveDirection = Vector3.zero;
-    private float turner;
-    private float looker;
-    public float sensitivity = 5;
+    private CharacterController p_controller_class;
 
-    // Use this for initialization
+    [Header("Player Variables")]
+    public float lookSensitivity_f = 5;    
+    public float speed_f = 25.0F;
+    public float jumpSpeed_f = 8.0F;
+    public float gravity_f = 20.0F;
+
+    private float p_turner_f;
+    private float p_looker_f;
+    private Vector3 moveDirection_v3 = Vector3.zero;
+
     void Start()
     {
-
+        p_controller_class = GetComponent<CharacterController>();
     }
 
-    // Update is called once per frame
     void Update()
     {
-        CharacterController controller = GetComponent<CharacterController>();
         // is the controller on the ground?
-        if (controller.isGrounded)
+        if (p_controller_class.isGrounded)
         {
             //Feed moveDirection with input.
-            moveDirection = new Vector3(Input.GetAxis("Horizontal"), 0, Input.GetAxis("Vertical"));
-            moveDirection = transform.TransformDirection(moveDirection);
-            //Multiply it by speed.
-            moveDirection *= speed;
+            moveDirection_v3 = new Vector3(Input.GetAxis("Horizontal"), 0, Input.GetAxis("Vertical"));
+            moveDirection_v3 = transform.TransformDirection(moveDirection_v3);
+            //Multiply it by speed_f.
+            moveDirection_v3 *= speed_f;
             //Jumping
             if (Input.GetButton("Jump"))
-                moveDirection.y = jumpSpeed;
+                moveDirection_v3.y = jumpSpeed_f;
 
         }
-        turner = Input.GetAxis("Mouse X") * sensitivity;
-        looker = Mathf.Clamp(-Input.GetAxis("Mouse Y") * sensitivity, -80, 80);
-        if (turner != 0)
+        p_turner_f = Input.GetAxis("Mouse X") * lookSensitivity_f;
+        p_looker_f = Mathf.Clamp(-Input.GetAxis("Mouse Y") * lookSensitivity_f, -80, 80);
+        if (p_turner_f != 0)
         {
             //Code for action on mouse moving right
-            transform.eulerAngles += new Vector3(0, turner, 0);
+            transform.eulerAngles += new Vector3(0, p_turner_f, 0);
         }
-        if (looker != 0)
+        if (p_looker_f != 0)
         {
             //Code for action on mouse moving right
-            playerCam.transform.eulerAngles += new Vector3(looker, 0, 0);
+            playerCam_go.transform.eulerAngles += new Vector3(p_looker_f, 0, 0);
             
         }
         //Applying gravity to the controller
-        moveDirection.y -= gravity * Time.deltaTime;
+        moveDirection_v3.y -= gravity_f * Time.deltaTime;
         //Making the character move
-        controller.Move(moveDirection * Time.deltaTime);
+        p_controller_class.Move(moveDirection_v3 * Time.deltaTime);
     }
 }

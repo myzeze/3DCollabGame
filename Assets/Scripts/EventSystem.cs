@@ -7,10 +7,10 @@ using UnityEngine;
 *   Last Edited: 21/11/2020, By Finn Dudley
 */
 
-public class EventSytem : MonoBehaviour
+public class EventSystem : MonoBehaviour
 {
     [Header("Event Variables")]
-    public static bool eventActive_b;
+    public static bool eventActive_b = false;
 
     // Event Types - most likely require delegates
     public static event System.Action LightsOut;
@@ -32,30 +32,37 @@ public class EventSytem : MonoBehaviour
             {
                 case 0: // Lights Out Event
                     LightsOut?.Invoke();
+                    Debug.Log("Lights Out Event Occured");
                     break;
 
                 case 1: // Oxygen Out Event
                     OxygenOff?.Invoke();
+                    Debug.Log("Oxygen Out Event Occured");
                     break;
 
                 case 2: // Spawn Enemy Ship.
                     SpawnEnemyShip?.Invoke();
+                    Debug.Log("Enemy Ship Event Occured");
                     break;
 
                 case 4: // Spawn Friendly Ship
                     SpawnFriendlyShip?.Invoke();
+                    Debug.Log("Friendly Ship Event Occured");
                     break;
 
                 case 5: // Spawn Space Monster
                     SpawnSpaceMonster?.Invoke();
+                    Debug.Log("Space Monster Event Occured");
                     break;
 
                 case 6: // Spawn Asteriod Field
                     SpawnAsteriodField?.Invoke();
+                    Debug.Log("Asteriod Field Event Occured");
                     break;
 
                 case 7: // EMP Blast
                     StartEMPBlast?.Invoke();
+                    Debug.Log("EMP Blast Event Occured");
                     break;
                 default:
                     break;

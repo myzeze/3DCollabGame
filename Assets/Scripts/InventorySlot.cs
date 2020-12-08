@@ -8,7 +8,7 @@ using UnityEngine.EventSystems;
 public class InventorySlot : MonoBehaviour
 {
 
-	public Image itemIcon_img;
+	public Image icon_img;
 	public Button removeButton_btn;
 
 	private Item p_item_class;  // Current p_item_class in the slot
@@ -18,8 +18,8 @@ public class InventorySlot : MonoBehaviour
 	{
 		p_item_class = _newItem;
 
-		itemIcon_img.sprite = p_item_class.icon_spr;
-		itemIcon_img.enabled = true;
+		icon_img.sprite = p_item_class.icon_img;
+		icon_img.enabled = true;
 		removeButton_btn.interactable = true;
 	}
 
@@ -28,8 +28,8 @@ public class InventorySlot : MonoBehaviour
 	{
 		p_item_class = null;
 
-		itemIcon_img.sprite = null;
-		itemIcon_img.enabled = false;
+		icon_img.sprite = null;
+		icon_img.enabled = false;
 		removeButton_btn.interactable = false;
 	}
 

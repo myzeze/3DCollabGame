@@ -1492,7 +1492,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cb346700f51b82048940a6aeeeaab8e5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  eventSystem: {fileID: 0}
+  eventSystem_class: {fileID: 0}
 --- !u!4 &691124723
 Transform:
   m_ObjectHideFlags: 0
@@ -1519,8 +1519,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 86a4199fab96007439e6d970bc5e2ecd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  space: 16
-  items: []
+  space_i: 10
+  items_li: []
 --- !u!1 &705507993
 GameObject:
   m_ObjectHideFlags: 0
@@ -3098,9 +3098,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cfbf77d2285e01f469fd2afb5a140954, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  radius: 3
-  interactionTransform: {fileID: 1318680358}
-  item: {fileID: 11400000, guid: 6d4fd2e4090aaf04986aa487070be144, type: 2}
+  radius_f: 3
+  interactionTransform_t: {fileID: 0}
+  item_class: {fileID: 0}
 --- !u!114 &1318680360
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3113,8 +3113,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 32b83ae0f678bc1439b155376f951028, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  radius: 3
-  interactionTransform: {fileID: 1318680358}
+  radius_f: 3
+  interactionTransform_t: {fileID: 0}
 --- !u!1 &1444895368
 GameObject:
   m_ObjectHideFlags: 0
@@ -3582,8 +3582,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 01374771a4e88794588a68bae3238025, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  inventoryUI: {fileID: 350689409}
-  itemsParent: {fileID: 48378556}
+  inventoryUI_go: {fileID: 350689409}
+  itemsParent_t: {fileID: 48378556}
 --- !u!224 &1667825240 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 4118675948047798881, guid: 1904a53205d493b4097a63895d2dfaad,

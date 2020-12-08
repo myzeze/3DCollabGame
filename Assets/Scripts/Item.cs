@@ -6,8 +6,8 @@
 public class Item : ScriptableObject
 {
 
-	new public string name_str = "New Item";    // Name of the item
-	public Sprite icon_spr = null;              // Item icon_spr
+	new public string name = "New Item";    // Name of the item
+	public Sprite icon_img = null;              // Item icon_spr
 	public bool showInInventory_b = true;
 
 	// Called when the item is pressed in the inventory

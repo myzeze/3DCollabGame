@@ -5,22 +5,22 @@ using UnityEngine;
 public class GameManager : MonoBehaviour
 {
     [Header("Class Variables")]
-    public EventSystem eventSystem;
+    public EventSystem eventSystem_class;
 
-    private double money;
-    private int score;
+    private double p_money_d;
+    private int p_score_i;
 
 #region Get Set Variables
 
-    public double Money
+    public double Money_d
     {
-        get { return money; }
-        set { money = value;}
+        get { return p_money_d; }
+        set { p_money_d = value;}
     }
-    public int Score
+    public int Score_i
     {
-        get { return score; }
-        set { score = value; }
+        get { return p_score_i; }
+        set { p_score_i = value; }
     }
 #endregion
 
@@ -28,7 +28,7 @@ public class GameManager : MonoBehaviour
 
     private void Start()
     {
-        eventSystem = GetComponent<EventSystem>();
+        eventSystem_class = GetComponent<EventSystem>();
     }
 
     private void Update()
@@ -43,10 +43,7 @@ public class GameManager : MonoBehaviour
 
         if(!EventSystem.eventActive_b)
         {
-            eventSystem.InvokeRandomEvent();
+            eventSystem_class.InvokeRandomEvent();
         }
-
-
     }
-
 }

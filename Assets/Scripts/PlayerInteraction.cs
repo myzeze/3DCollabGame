@@ -26,7 +26,8 @@ public class PlayerInteraction : MonoBehaviour
 
 #region Unity Functions
 
-    private void Start(){
+    private void Start()
+    {
         Cursor.lockState = CursorLockMode.Locked;
 
         player1MovementScript_class = gameObject.GetComponent<Player1Movement>();
@@ -37,7 +38,8 @@ public class PlayerInteraction : MonoBehaviour
         canvasRectTransform_rt = canvas_can.GetComponent<RectTransform>();
     }
 
-    private void Update(){
+    private void Update()
+    {
         DropItem();
         ItemInteraction();
         RaycastInteract();
@@ -67,33 +69,35 @@ public class PlayerInteraction : MonoBehaviour
     /// <summary>
     /// Handles any Player Interaction using a raycast from the player.
     /// </summary>
-    private void RaycastInteract(){
-
-        Ray ray = player_cam.ViewportPointToRay(new Vector3(0.5f, 0.5f));
-        RaycastHit hit;
+    private void RaycastInteract()
+    {
+        Ray ray_ray = player_cam.ViewportPointToRay(new Vector3(0.5f, 0.5f));
+        RaycastHit hit_rhit;
         Debug.DrawRay(player_cam.transform.position, player_cam.transform.forward * playerReachDistance_f, Color.green ); // Debug to Draw Ray in Scene View
 
-        if(Physics.Raycast(ray, out hit, playerReachDistance_f)){
-            ObjectType objType = hit.collider.gameObject.GetComponent<ObjectType>();
-            if(objType != null){
-                
-                Vector2 grabIconTempPos = player_cam.WorldToScreenPoint(hit.transform.position);
-                grabIconRectTransform_rt.anchoredPosition = (grabIconTempPos - canvasRectTransform_rt.sizeDelta / 2f); // TEMP most likely need changing for performance
+        if(Physics.Raycast(ray_ray, out hit_rhit, playerReachDistance_f)){
+            ObjectType objType_class = hit_rhit.collider.gameObject.GetComponent<ObjectType>();
+
+            if(objType_class != null){
+                Vector2 grabIconTempPos_v2 = player_cam.WorldToScreenPoint(hit_rhit.transform.position);
+                grabIconRectTransform_rt.anchoredPosition = (grabIconTempPos_v2 - canvasRectTransform_rt.sizeDelta / 2f); // TEMP most likely need changing for performance
+
                 if(!grabIcon_go.activeSelf) grabIcon_go.SetActive(true);
+
                 if(Input.GetButtonDown("Interact")){
-                    switch (objType.selectedObjectType_e)
+                    switch (objType_class.selectedObjectType_e)
                     {
                     case ObjectTypes.Task:
                         // Start to Complete the task
-                        Debug.Log("Interacted with " + objType.selectedObjectType_e.ToString());
+                        Debug.Log("Interacted with " + objType_class.selectedObjectType_e.ToString());
                         break;
                     case ObjectTypes.Equipment:
                         // Start interacting with ships Equipment.
-                        Debug.Log("Interacted with " + objType.selectedObjectType_e.ToString());
+                        Debug.Log("Interacted with " + objType_class.selectedObjectType_e.ToString());
                         break;
                     case ObjectTypes.Item:
                         // If it is a pickable item. Add to Inventory
-                        Debug.Log("Interacted with " + objType.selectedObjectType_e.ToString());
+                        Debug.Log("Interacted with " + objType_class.selectedObjectType_e.ToString());
                         break;
                     default:
                         break;

@@ -80,7 +80,8 @@ public class PlayerInteraction : MonoBehaviour
 
             if(objType_class != null){
                 Vector2 grabIconTempPos_v2 = player_cam.WorldToScreenPoint(hit_rhit.transform.position);
-                grabIconRectTransform_rt.anchoredPosition = (grabIconTempPos_v2 - canvasRectTransform_rt.sizeDelta / 2f); // TEMP most likely need changing for performance
+                RectTransformUtility.ScreenPointToLocalPointInRectangle(canvasRectTransform_rt, grabIconTempPos_v2, player_cam, out Vector2 calculatedCanvasPos_v2);
+                grabIconRectTransform_rt.localPosition = calculatedCanvasPos_v2;
 
                 if(!grabIcon_go.activeSelf) grabIcon_go.SetActive(true);
 

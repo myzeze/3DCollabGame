@@ -5,7 +5,7 @@ using UnityEngine;
 public class GameManager : MonoBehaviour
 {
     [Header("Class Variables")]
-    public EventSystem eventSystem_class;
+    private GameEventSystem eventSystem_class;
 
     private double p_money_d;
     private int p_score_i;
@@ -28,7 +28,7 @@ public class GameManager : MonoBehaviour
 
     private void Start()
     {
-        eventSystem_class = GetComponent<EventSystem>();
+        eventSystem_class = gameObject.GetComponent<GameEventSystem>();
     }
 
     private void Update()
@@ -41,7 +41,7 @@ public class GameManager : MonoBehaviour
     {
         yield return new WaitForSeconds(1);
 
-        if(!EventSystem.eventActive_b)
+        if(!GameEventSystem.eventActive_b)
         {
             eventSystem_class.InvokeRandomEvent();
         }

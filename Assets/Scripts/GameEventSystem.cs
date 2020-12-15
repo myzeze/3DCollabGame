@@ -7,7 +7,7 @@ using UnityEngine;
 *   Last Edited: 21/11/2020, By Finn Dudley
 */
 
-public class EventSystem : MonoBehaviour
+public class GameEventSystem : MonoBehaviour
 {
     [Header("Event Variables")]
     public static bool eventActive_b = false;

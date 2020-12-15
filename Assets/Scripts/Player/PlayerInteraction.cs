@@ -98,6 +98,8 @@ public class PlayerInteraction : MonoBehaviour
                         break;
                     case ObjectTypes.Item:
                         // If it is a pickable item. Add to Inventory
+                        Inventory.instance_class.Add(objType_class.itemType_class);
+                        Destroy(hit_rhit.collider.gameObject);
                         Debug.Log("Interacted with " + objType_class.selectedObjectType_e.ToString());
                         break;
                     default:
@@ -106,7 +108,6 @@ public class PlayerInteraction : MonoBehaviour
                 }
                 
             }
-            
         }
         else if (grabIcon_go.activeSelf) grabIcon_go.SetActive(false);   
     }

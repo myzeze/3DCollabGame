@@ -86,7 +86,7 @@ public class PlayerInteraction : MonoBehaviour
                 if(!grabIcon_go.activeSelf) grabIcon_go.SetActive(true);
 
                 if(Input.GetButtonDown("Interact")){
-                    Debug.Log("Interacted with " + objType_class.selectedObjectType_e.ToString());
+                    Debug.Log("Interacted with " + objType_class.selectedObjectType_e.ToString());                    
                     switch (objType_class.selectedObjectType_e)
                     {
                     case ObjectTypes.Task:
@@ -111,9 +111,8 @@ public class PlayerInteraction : MonoBehaviour
     #region ObjectType Interaction
     private void EquipmentInteract(RaycastHit _hit_rhit)
     {
-        IEquipment equipmentObject_class = _hit_rhit.collider.gameObject.GetComponent<IEquipment>();
+        EquipmentObject equipmentObject_class = _hit_rhit.collider.gameObject.GetComponent<EquipmentObject>();
 
-        equipmentObject_class.StartEquipment();
     }
 
     private void ItemInteract(RaycastHit _hit_rhit)
@@ -122,8 +121,6 @@ public class PlayerInteraction : MonoBehaviour
 
         Inventory.instance_class.Add(itemObject.itemType_class);
         Destroy(_hit_rhit.collider.gameObject);
-
-        Debug.Log("Added Item to Inventory");
     }
 
     private void TaskInteract(RaycastHit _hit_rhit)

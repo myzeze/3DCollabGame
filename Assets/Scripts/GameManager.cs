@@ -5,6 +5,7 @@ using UnityEngine;
 
 public class GameManager : MonoBehaviour
 {
+
     [Header("Class Variables")]
     public static GameManager instance_class;
     private GameEventSystem eventSystem_class;

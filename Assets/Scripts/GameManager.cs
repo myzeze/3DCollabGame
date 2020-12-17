@@ -1,10 +1,13 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 
 public class GameManager : MonoBehaviour
 {
+
     [Header("Class Variables")]
+    public static GameManager instance_class;
     private GameEventSystem eventSystem_class;
 
     private double p_money_d;
@@ -28,6 +31,7 @@ public class GameManager : MonoBehaviour
 
     private void Start()
     {
+        instance_class = this;
         eventSystem_class = gameObject.GetComponent<GameEventSystem>();
     }
 

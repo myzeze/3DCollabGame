@@ -41,14 +41,14 @@ public class PlayerInteraction : MonoBehaviour
     private void Update()
     {
         DropItem();
-        ItemInteraction();
+        HeldItemInteraction();
         RaycastInteract();
     }
 #endregion
 
 // -----
 
-#region  Item Functions
+#region  Interaction Functions
 
     /// <summary>
     /// Drops the currently handheld item.
@@ -62,7 +62,7 @@ public class PlayerInteraction : MonoBehaviour
     /// Handles any handheld item interaction.
     /// If an item is in the hand equals <see langword="true"/>.
     /// </summary>
-    private void ItemInteraction(){
+    private void HeldItemInteraction(){
 
     }
 
@@ -86,21 +86,17 @@ public class PlayerInteraction : MonoBehaviour
                 if(!grabIcon_go.activeSelf) grabIcon_go.SetActive(true);
 
                 if(Input.GetButtonDown("Interact")){
+                    Debug.Log("Interacted with " + objType_class.selectedObjectType_e.ToString());                    
                     switch (objType_class.selectedObjectType_e)
                     {
                     case ObjectTypes.Task:
-                        // Start to Complete the task
-                        Debug.Log("Interacted with " + objType_class.selectedObjectType_e.ToString());
+                        TaskInteract(hit_rhit);
                         break;
                     case ObjectTypes.Equipment:
-                        // Start interacting with ships Equipment.
-                        Debug.Log("Interacted with " + objType_class.selectedObjectType_e.ToString());
+                        EquipmentInteract(hit_rhit);
                         break;
                     case ObjectTypes.Item:
-                        // If it is a pickable item. Add to Inventory
-                        Inventory.instance_class.Add(objType_class.itemType_class);
-                        Destroy(hit_rhit.collider.gameObject);
-                        Debug.Log("Interacted with " + objType_class.selectedObjectType_e.ToString());
+                        ItemInteract(hit_rhit);
                         break;
                     default:
                         break;
@@ -111,5 +107,29 @@ public class PlayerInteraction : MonoBehaviour
         }
         else if (grabIcon_go.activeSelf) grabIcon_go.SetActive(false);   
     }
+
+    #region ObjectType Interaction
+    private void EquipmentInteract(RaycastHit _hit_rhit)
+    {
+        EquipmentObject equipmentObject_class = _hit_rhit.collider.gameObject.GetComponent<EquipmentObject>();
+
+    }
+
+    private void ItemInteract(RaycastHit _hit_rhit)
+    {
+        ItemObject itemObject = _hit_rhit.collider.gameObject.GetComponent<ItemObject>();
+
+        Inventory.instance_class.Add(itemObject.itemType_class);
+        Destroy(_hit_rhit.collider.gameObject);
+    }
+
+    private void TaskInteract(RaycastHit _hit_rhit)
+    {
+        ITask taskObject = _hit_rhit.collider.gameObject.GetComponent<ITask>();
+
+        taskObject.InteractTask();
+    }
+    #endregion
+
 #endregion
 }

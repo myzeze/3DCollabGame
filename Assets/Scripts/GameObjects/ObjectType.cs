@@ -18,10 +18,6 @@ public enum ObjectTypes
 
 public class ObjectType : MonoBehaviour
 {
+    [Header("Object Type")]
     public ObjectTypes selectedObjectType_e;
-    public Item itemType_class;
-
-    private void OnDisable(){
-        
-    }
 }

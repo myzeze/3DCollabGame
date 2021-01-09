@@ -5,7 +5,7 @@ using UnityEngine.UI;
 
 public class HealthSystem : MonoBehaviour
 {
-    public int maxHealth_f;
+    public float maxHealth_f = 100f;
     public float currentHealth_f;
 
     public Slider playerHealthSlider_sl;
@@ -13,6 +13,7 @@ public class HealthSystem : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        Time.timeScale = 1f;
         //initialzing the player health value 
         currentHealth_f = maxHealth_f;
     }
@@ -30,8 +31,10 @@ public class HealthSystem : MonoBehaviour
     {
         if (currentHealth_f <= 0)
         {
-            //All game object components will be disabled 
-            //Game over/Score screen pops up
+            //Gameplay stops
+            Time.timeScale = 0;
+            //GameOver screen comes up
+
         }
     }
 }

@@ -2686,7 +2686,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 81561272123f1ec43955089a9ba175c9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  selectedObjectType_e: 2
 --- !u!65 &723534336
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -3356,8 +3355,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 387705899c34d5847bbf47aaf816a85f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  selectedObjectType_e: 0
-  cleanableObjects_arr: []
 --- !u!65 &823681949
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -3465,8 +3462,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4a21b839f94256344a163b20642af6cc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  selectedObjectType_e: 1
-  itemType_class: {fileID: 11400000, guid: 6d4fd2e4090aaf04986aa487070be144, type: 2}
 --- !u!65 &826021438
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -8336,6 +8331,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Ship
+      objectReference: {fileID: 0}
+    - target: {fileID: 6483884970589354261, guid: c7bdbcec6baffcd48af112b96540500a,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8043493668162505478, guid: c7bdbcec6baffcd48af112b96540500a,
         type: 3}

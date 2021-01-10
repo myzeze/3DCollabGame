@@ -4759,7 +4759,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   scoreText_txt: {fileID: 0}
-  playerScore_i: 12
 --- !u!1001 &699800613
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -6691,7 +6690,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 'SCORE:'
+  m_Text: 'SCORE: 0'
 --- !u!222 &1033277698
 CanvasRenderer:
   m_ObjectHideFlags: 0

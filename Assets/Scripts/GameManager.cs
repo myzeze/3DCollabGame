@@ -15,6 +15,7 @@ public class GameManager : MonoBehaviour
     private int p_score_i;
 
     [Header("Task Variables")]
+    [SerializeField]
     public ITask[] gameTasks_class_arr;
 
 #region Get Set Variables

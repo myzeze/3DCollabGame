@@ -1185,6 +1185,9 @@ MonoBehaviour:
   OverrideAttenuation: 0
   OverrideMinDistance: 0
   OverrideMaxDistance: 0
+  hasTriggered: 0
+  isQuitting: 0
+  isOneshot: 0
 --- !u!114 &164726260
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4781,7 +4784,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 324d49ef7c4cd6f44b096cbc064833fa, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  scoreText_txt: {fileID: 0}
+  scoreText_txt: {fileID: 1033277697}
 --- !u!1001 &699800613
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -5513,6 +5516,9 @@ MonoBehaviour:
   OverrideAttenuation: 0
   OverrideMinDistance: 0
   OverrideMaxDistance: 0
+  hasTriggered: 0
+  isQuitting: 0
+  isOneshot: 0
 --- !u!1001 &810276212
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -6170,6 +6176,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 86c6556701af9e04380698b89f691b6e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  rigidBody: {fileID: 0}
+  rigidBody2D: {fileID: 0}
   attenuationObject: {fileID: 0}
   ListenerNumber: -1
 --- !u!1001 &970227528
@@ -7401,6 +7409,9 @@ MonoBehaviour:
   OverrideAttenuation: 0
   OverrideMinDistance: 0
   OverrideMaxDistance: 0
+  hasTriggered: 0
+  isQuitting: 0
+  isOneshot: 0
 --- !u!65 &1156906747
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -12352,6 +12363,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 86c6556701af9e04380698b89f691b6e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  rigidBody: {fileID: 0}
+  rigidBody2D: {fileID: 0}
   attenuationObject: {fileID: 0}
   ListenerNumber: -1
 --- !u!81 &2030811267
@@ -12998,8 +13011,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   healthAmount_f: 0
   animUI_anim: {fileID: 0}
-  healthStatus_img: {fileID: 0}
-  healthValue_class: {fileID: 0}
+  healthStatus_img: {fileID: 4214659044215329805}
+  healthValue_class: {fileID: 4214659044215329808}
 --- !u!114 &4214659044215329808
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -13014,8 +13027,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   maxHealth_f: 100
   currentHealth_f: 0
-  player_go: {fileID: 0}
-  gameOverScreen_go: {fileID: 0}
+  player_go: {fileID: 164726257}
+  gameOverScreen_go: {fileID: 1249245763}
 --- !u!95 &9119259025281902740
 Animator:
   serializedVersion: 3

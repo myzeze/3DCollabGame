@@ -34,7 +34,7 @@ public class GameManager : MonoBehaviour
         instance_class = this;
         p_eventSystem_class = gameObject.GetComponent<GameEventSystem>();
 
-        gameTasks_class_arr = GetComponents<ITask>();
+        gameTasks_class_arr = FindObjectsOfType<MonoBehaviour>().OfType<ITask>().ToArray();
     }
 
     private void Update()

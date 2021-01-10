@@ -4,9 +4,9 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 public class PlayerPauseMenu : MonoBehaviour
 {
-    public static bool gameIsPaused;
-    public GameObject PauseMenu;
-    public GameObject Cam;
+    [Header("UI Variables")]
+    private static bool p_gameIsPaused_b;
+    public GameObject PauseMenu_go;
 
 
 
@@ -20,9 +20,10 @@ public class PlayerPauseMenu : MonoBehaviour
 
     void Update()
     {
+        /// 
         if (Input.GetButtonDown("PauseMenu"))
         {
-            gameIsPaused = !gameIsPaused;
+            p_gameIsPaused_b = !p_gameIsPaused_b;
             PauseGame();
         }
     }
@@ -30,15 +31,15 @@ public class PlayerPauseMenu : MonoBehaviour
 
     void PauseGame()
     {
-        if (gameIsPaused)
+        if (p_gameIsPaused_b)
         {
             Time.timeScale = 0f;
             Paused();
             Cursor.visible = true;
             Cursor.lockState = CursorLockMode.None;
 
-            GameObject varGameObject = GameObject.Find("Player");
-            varGameObject.GetComponent<Player1Movement>().enabled = false;
+            GameObject getPlayerMoveScript_go = GameObject.Find("Player");
+            getPlayerMoveScript_go.GetComponent<Player1Movement>().enabled = false;
             
 
 
@@ -52,21 +53,21 @@ public class PlayerPauseMenu : MonoBehaviour
             ResumeGame();
             Cursor.visible = false;
             Cursor.lockState = CursorLockMode.Locked;
-            GameObject varGameObject = GameObject.Find("Player");
-            varGameObject.GetComponent<Player1Movement>().enabled = true;
+            GameObject getPlayerMoveScript_go = GameObject.Find("Player");
+            getPlayerMoveScript_go.GetComponent<Player1Movement>().enabled = true;
 
         }
     }
     void ResumeGame()
     {
-        PauseMenu.SetActive(false);
+        PauseMenu_go.SetActive(false);
 
     }
 
     void Paused()
     {
-        PauseMenu.SetActive(true);
-        gameIsPaused = true;
+        PauseMenu_go.SetActive(true);
+        p_gameIsPaused_b = true;
     }
 
 
@@ -84,8 +85,8 @@ public class PlayerPauseMenu : MonoBehaviour
         ResumeGame();
         Cursor.visible = false;
         Cursor.lockState = CursorLockMode.Locked;
-        GameObject varGameObject = GameObject.Find("Player");
-        varGameObject.GetComponent<Player1Movement>().enabled = true;
+        GameObject getPlayerMoveScript_go = GameObject.Find("Player");
+        getPlayerMoveScript_go.GetComponent<Player1Movement>().enabled = true;
     }
 
     public void ExitGame()

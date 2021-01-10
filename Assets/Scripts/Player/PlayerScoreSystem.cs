@@ -12,7 +12,7 @@ public class PlayerScoreSystem : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        playerScore_f = 0;
+        playerScore_f = 100;
     }
 
     // Update is called once per frame

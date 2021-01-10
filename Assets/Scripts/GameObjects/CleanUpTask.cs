@@ -6,7 +6,6 @@ public class CleanUpTask : ObjectType, ITask
 {   
     [Header("General Variables")]
     public bool taskActive_b;
-    private int p_taskPriority_i;
 
     [Header("GameObject Variables")]
     public GameObject[] cleanableObjects_arr;
@@ -16,13 +15,9 @@ public class CleanUpTask : ObjectType, ITask
         ActivateTask();
     }
 
-    public int GetPriority()
-    {
-        return p_taskPriority_i;
-    }
-
     public void ActivateTask()
     {
+        taskActive_b = true;
         foreach (GameObject cleanableObject in cleanableObjects_arr)
         {
             cleanableObject.SetActive(true);
@@ -42,8 +37,9 @@ public class CleanUpTask : ObjectType, ITask
     {
         foreach (GameObject cleanableObject in cleanableObjects_arr)
         {
-            cleanableObject.SetActive(false);
+            LeanTween.moveY(cleanableObject, cleanableObject.transform.position.y + 0.5f, Random.Range(0.1f, 0.5f)).setOnComplete(() => cleanableObject.SetActive(false));
         }
+        taskActive_b = false;
         Debug.Log("Finished Clean-Up Task");    // --- REMOVE
     }
 }

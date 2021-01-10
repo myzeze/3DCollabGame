@@ -7,7 +7,7 @@ using UnityEngine.UI;
 
 public class Health_Bar_UI : MonoBehaviour
 {
-    public float healthAmount = 100f; //Used to test health values. Can be used for in-game health by referencing other scripts.
+    public float healthAmount; //Used to test health values. Can be used for in-game health by referencing other scripts.
     public Animator animUI; //The health bar animator.
     public static bool aliveFine; //Boolean for when health is above 75%.
     public static bool aliveCaution; //Boolean for when health is below 75%.
@@ -15,14 +15,19 @@ public class Health_Bar_UI : MonoBehaviour
     public static bool deadFlatline; //Boolean for when health reaches zero.
     public Image healthStatus; //The animated set of sprites used to display health.
 
+    public HealthSystem healthValue;
+
 
     void Start()
     {
         animUI = GetComponent<Animator>(); //Declaring the animUI as the health bar's animator.
+        healthAmount = healthValue.maxHealth_f; 
     }
 
     void Update()
     {
+        healthAmount = healthValue.currentHealth_f;//the healthAmount script is updated to the current health 
+
         if (healthAmount >= 75f) //If health is above or equal to 75%, disable all booleans except for the aliveFine boolean.
         {
             aliveCaution = false;

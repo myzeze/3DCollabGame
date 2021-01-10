@@ -11,22 +11,20 @@ public class PlayerScoreSystem : MonoBehaviour
     public int playerScore_i;
 
     // Start is called before the first frame update
-    void Start()
+    private void Start()
     {
         
     }
 
     // Update is called once per frame
-    void Update()
+    private void Update()
     {
         //The UI getting updated every frame
         scoreText_txt.text = playerScore_i.ToString();
-
-        scoreIncrease();
     }
 
-    void scoreIncrease()
+    public void scoreIncrease(int _scoreToAdd)
     {
-        //Make the score go up with an if statement based on the task completed
+        playerScore_i += _scoreToAdd;
     }
 }

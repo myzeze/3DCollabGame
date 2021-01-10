@@ -10,12 +10,12 @@ public class InventoryUI : MonoBehaviour
 	public GameObject inventoryUI_go;  // The entire UI
 	public Transform itemsParent_t;   // The parent object of all the items
 
-	private Inventory inventory_class;    // Our current inventory_class
+	private Inventory p_inventory_class;    // Our current inventory_class
 
 	void Start()
 	{
-		inventory_class = Inventory.instance_class; //references to singleton
-		inventory_class.onItemChangedCallback += UpdateUI;
+		p_inventory_class = Inventory.instance_class; //references to singleton
+		p_inventory_class.onItemChangedCallback += UpdateUI;
 	}
 
 	// Check to see if we should open/close the inventory_class
@@ -40,9 +40,9 @@ public class InventoryUI : MonoBehaviour
 
 		for (int i = 0; i < slots_class_arr.Length; i++)
 		{
-			if (i < inventory_class.items_li.Count)
+			if (i < p_inventory_class.items_li.Count)
 			{
-				slots_class_arr[i].AddItem(inventory_class.items_li[i]);
+				slots_class_arr[i].AddItem(p_inventory_class.items_li[i]);
 			}
 			else
 			{

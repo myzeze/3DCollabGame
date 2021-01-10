@@ -7,78 +7,77 @@ using UnityEngine.UI;
 
 public class Health_Bar_UI : MonoBehaviour
 {
-    public float healthAmount; //Used to test health values. Can be used for in-game health by referencing other scripts.
-    public Animator animUI; //The health bar animator.
-    public static bool aliveFine; //Boolean for when health is above 75%.
-    public static bool aliveCaution; //Boolean for when health is below 75%.
-    public static bool aliveDanger; //Boolean for when health is below 25%.
-    public static bool deadFlatline; //Boolean for when health reaches zero.
-    public Image healthStatus; //The animated set of sprites used to display health.
+    public float healthAmount_f; //Used to test health values. Can be used for in-game health by referencing other scripts.
+    public Animator animUI_anim; //The health bar animator.
+    public static bool aliveFine_b; //Boolean for when health is above 75%.
+    public static bool aliveCaution_b; //Boolean for when health is below 75%.
+    public static bool aliveDanger_b; //Boolean for when health is below 25%.
+    public static bool deadFlatline_b; //Boolean for when health reaches zero.
+    public Image healthStatus_img; //The animated set of sprites used to display health.
 
-    public HealthSystem healthValue;
-
+    public HealthSystem healthValue_class;
 
     void Start()
     {
-        animUI = GetComponent<Animator>(); //Declaring the animUI as the health bar's animator.
-        healthAmount = healthValue.maxHealth_f; 
+        animUI_anim = GetComponent<Animator>(); //Declaring the animUI_anim as the health bar's animator.
+        healthAmount_f = healthValue_class.maxHealth_f; 
     }
 
     void Update()
     {
-        healthAmount = healthValue.currentHealth_f;//the healthAmount script is updated to the current health 
+        healthAmount_f = healthValue_class.currentHealth_f;//the healthAmount_f script is updated to the current health 
 
-        if (healthAmount >= 75f) //If health is above or equal to 75%, disable all booleans except for the aliveFine boolean.
+        if (healthAmount_f >= 75f) //If health is above or equal to 75%, disable all booleans except for the aliveFine_b boolean.
         {
-            aliveCaution = false;
-            aliveDanger = false;
-            deadFlatline = false;
-            aliveFine = true;
-        }
-
-        if (healthAmount < 75f) //If health is below 75%, disable all booleans except for the aliveCaution boolean.
-        {
-            aliveFine = false;
-            aliveDanger = false;
-            deadFlatline = false;
-            aliveCaution = true;
+            aliveCaution_b = false;
+            aliveDanger_b = false;
+            deadFlatline_b = false;
+            aliveFine_b = true;
         }
 
-        if (healthAmount < 25f) //If health is below 25%, disable all booleans except for the aliveDanger boolean.
+        if (healthAmount_f < 75f) //If health is below 75%, disable all booleans except for the aliveCaution_b boolean.
         {
-            aliveFine = false;
-            aliveCaution = false;
-            deadFlatline = false;
-            aliveDanger = true;
+            aliveFine_b = false;
+            aliveDanger_b = false;
+            deadFlatline_b = false;
+            aliveCaution_b = true;
         }
 
-        if (healthAmount <= 0f) //If health reaches zero, disable all booleans except for the deadFlatline boolean.
+        if (healthAmount_f < 25f) //If health is below 25%, disable all booleans except for the aliveDanger_b boolean.
         {
-            aliveFine = false;
-            aliveCaution = false;
-            aliveDanger = false;
-            deadFlatline = true;
+            aliveFine_b = false;
+            aliveCaution_b = false;
+            deadFlatline_b = false;
+            aliveDanger_b = true;
         }
 
-        if (aliveFine == true) //If the aliveFine boolean is true, play the "AliveFull" animation and change colour.
+        if (healthAmount_f <= 0f) //If health reaches zero, disable all booleans except for the deadFlatline_b boolean.
         {
-            animUI.Play("AliveFull");
-            healthStatus.GetComponent<Image>().color = new Color32(96, 202, 0, 255); //Green.
+            aliveFine_b = false;
+            aliveCaution_b = false;
+            aliveDanger_b = false;
+            deadFlatline_b = true;
         }
-        else if (aliveCaution == true) //If the aliveCaution boolean is true, play the "AliveCaution" animation and change colour.
+
+        if (aliveFine_b == true) //If the aliveFine_b boolean is true, play the "AliveFull" animation and change colour.
         {
-            animUI.Play("AliveCaution");
-            healthStatus.GetComponent<Image>().color = new Color32(215, 214, 30, 255); //Yellow.
+            animUI_anim.Play("AliveFull");
+            healthStatus_img.GetComponent<Image>().color = new Color32(96, 202, 0, 255); //Green.
         }
-        else if (aliveDanger == true) //If the aliveDanger boolean is true, play the "AliveDanger" animation and change colour.
+        else if (aliveCaution_b == true) //If the aliveCaution_b boolean is true, play the "AliveCaution" animation and change colour.
         {
-            animUI.Play("AliveDanger");
-            healthStatus.GetComponent<Image>().color = new Color32(217, 47, 0, 255); //Red.
+            animUI_anim.Play("AliveCaution");
+            healthStatus_img.GetComponent<Image>().color = new Color32(215, 214, 30, 255); //Yellow.
         }
-        else if (deadFlatline == true) //If the deadFlatline boolean is true, play the "Death" animation and change colour.
+        else if (aliveDanger_b == true) //If the aliveDanger_b boolean is true, play the "AliveDanger" animation and change colour.
         {
-            animUI.Play("Death");
-            healthStatus.GetComponent<Image>().color = new Color32(0, 0, 0, 255); //Black.
+            animUI_anim.Play("AliveDanger");
+            healthStatus_img.GetComponent<Image>().color = new Color32(217, 47, 0, 255); //Red.
+        }
+        else if (deadFlatline_b == true) //If the deadFlatline_b boolean is true, play the "Death" animation and change colour.
+        {
+            animUI_anim.Play("Death");
+            healthStatus_img.GetComponent<Image>().color = new Color32(0, 0, 0, 255); //Black.
         }
         
     }

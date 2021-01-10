@@ -28,8 +28,4 @@ public class CleanUpTask : ObjectType, ITask
             cleanableObject.SetActive(false);
         }
     }
-
-    private void OnTriggerEnter(Collider col){
-        CompleteTask();
-    }
 }

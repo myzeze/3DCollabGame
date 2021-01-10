@@ -7,7 +7,7 @@ public class KeycardSwipeTask : ObjectType, ITask
     [Header("General Variables")]
     public bool taskActive_b;
     
-    private Vector3 keycardScaleAnimationSize_v3 = new Vector3(0.95f, 2f, 0.1f);
+    private Vector3 p_keycardScaleAnimationSize_v3 = new Vector3(0.95f, 2f, 0.1f);
 
     [Header("GameObject Variables")]
     public GameObject keycardSlotCover_go;
@@ -29,7 +29,7 @@ public class KeycardSwipeTask : ObjectType, ITask
         if(taskActive_b)
         {   
             LeanTween.rotateAroundLocal(keycardSlotCover_go, Vector3.down, -190.0f, 1.5f)
-                .setOnStart( () => LeanTween.scale(keycard_go, keycardScaleAnimationSize_v3, 0.3f).setDelay(0.5f))
+                .setOnStart( () => LeanTween.scale(keycard_go, p_keycardScaleAnimationSize_v3, 0.3f).setDelay(0.5f))
                 .setOnComplete( () =>  LeanTween.moveLocalZ(keycard_go, 0.15f, 0.4f ).setOnComplete(CompleteTask))
                 .setEaseOutBounce();
         }

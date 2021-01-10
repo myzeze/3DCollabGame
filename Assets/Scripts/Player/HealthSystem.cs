@@ -8,14 +8,14 @@ public class HealthSystem : MonoBehaviour
     public float maxHealth_f = 100f;
     public float currentHealth_f;
 
-    public GameObject player;
-    public GameObject gameOverScreen;
+    public GameObject player_go;
+    public GameObject gameOverScreen_go;
 
     // Start is called before the first frame update
     void Start()
     {
-        player.GetComponent<PlayerInteraction>().enabled = true;
-        player.GetComponent<PlayerPauseMenu>().enabled = true;
+        player_go.GetComponent<PlayerInteraction>().enabled = true;
+        player_go.GetComponent<PlayerPauseMenu>().enabled = true;
         //initialzing the player health value 
         currentHealth_f = maxHealth_f;
         Time.timeScale = 1f;
@@ -34,9 +34,9 @@ public class HealthSystem : MonoBehaviour
             Cursor.visible = true;
             Cursor.lockState = CursorLockMode.None;
             Time.timeScale = 0f;
-            player.GetComponent<PlayerInteraction>().enabled = false;
-            player.GetComponent<PlayerPauseMenu>().enabled = false;
-            gameOverScreen.SetActive(true);
+            player_go.GetComponent<PlayerInteraction>().enabled = false;
+            player_go.GetComponent<PlayerPauseMenu>().enabled = false;
+            gameOverScreen_go.SetActive(true);
 
         }
     }

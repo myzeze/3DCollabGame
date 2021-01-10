@@ -38,6 +38,7 @@ public class KeycardSwipeTask : ObjectType, ITask
     public void CompleteTask()
     {
         taskActive_b = false;
+        PlayerScoreSystem.instance_class.scoreIncrease(10);   
 
         LeanTween.moveLocalZ(keycard_go, 0.4f, 0.3f).setOnStart(() => LeanTween.scale(keycard_go, new Vector3(0, 0, 0), 0.3f));
     }

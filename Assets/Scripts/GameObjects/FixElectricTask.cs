@@ -29,16 +29,17 @@ public class FixElectricTask : ObjectType, ITask
 
     public void InteractTask()
     {
-        
-        CompleteTask();
+        if(taskActive_b)
+        {
+            CompleteTask();
+        }   
     }
 
     public void CompleteTask()
-    {
+    {        
         electricalBoxBroken_go.SetActive(false);
         electricalBoxFixed_go.SetActive(true);
         p_electricEffect_ps.Stop();
-
-        Debug.Log("Electrical Task Finished");      // --- REMOVE
+        PlayerScoreSystem.instance_class.scoreIncrease(10);
     }
 }

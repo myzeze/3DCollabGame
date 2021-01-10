@@ -3476,7 +3476,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cb346700f51b82048940a6aeeeaab8e5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  gameActive_b: 0
+  gameActive_b: 1
 --- !u!4 &691124723
 Transform:
   m_ObjectHideFlags: 0
@@ -3518,7 +3518,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   scoreText_txt: {fileID: 1033277697}
-  playerScore_i: 12
 --- !u!1001 &699800613
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -5014,7 +5013,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 'SCORE:'
+  m_Text: 'SCORE: 0'
 --- !u!222 &1033277698
 CanvasRenderer:
   m_ObjectHideFlags: 0

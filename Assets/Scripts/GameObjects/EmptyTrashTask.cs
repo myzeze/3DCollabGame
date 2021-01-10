@@ -38,7 +38,7 @@ public class EmptyTrashTask : ObjectType, ITask
 
     public void CompleteTask()
     {
-        Debug.Log("Task Completed - Empty Trash");
         taskActive_b = false;
+        PlayerScoreSystem.instance_class.scoreIncrease(10);   
     }
 }

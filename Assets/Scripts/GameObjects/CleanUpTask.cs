@@ -15,9 +15,12 @@ public class CleanUpTask : ObjectType, ITask
 
     public void ActivateTask()
     {
-        foreach (GameObject cleanableObject in cleanableObjects_arr)
+        if(taskActive_b)
         {
-            cleanableObject.SetActive(true);
+            foreach (GameObject cleanableObject in cleanableObjects_arr)
+            {
+                cleanableObject.SetActive(true);
+            }
         }
     }
 
@@ -27,5 +30,7 @@ public class CleanUpTask : ObjectType, ITask
         {
             cleanableObject.SetActive(false);
         }
+
+        PlayerScoreSystem.instance_class.scoreIncrease(10);   
     }
 }

@@ -6,6 +6,8 @@
     CommonCrewQuarters,
     Reactor,
     LeftEngine,
+    LeftHallway,
     RightEngine,
+    RightHallway,
     Storage
 }

@@ -6,7 +6,6 @@ public class FixElectricTask : ObjectType, ITask
 {
     [Header("General Variables")]
     public bool taskActive_b;
-    private int p_taskPriority_i;
 
     [Header("GameObject Variables")]
     public GameObject electricalBoxBroken_go;
@@ -20,11 +19,6 @@ public class FixElectricTask : ObjectType, ITask
         ActivateTask();
     }
 
-    public int GetPriority()
-    {
-        return p_taskPriority_i;
-    }
-
     public void ActivateTask()
     {
         electricalBoxFixed_go.SetActive(false);
@@ -35,7 +29,7 @@ public class FixElectricTask : ObjectType, ITask
 
     public void InteractTask()
     {
-
+        
         CompleteTask();
     }
 

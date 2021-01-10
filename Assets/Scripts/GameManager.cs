@@ -15,8 +15,8 @@ public class GameManager : MonoBehaviour
     private int p_score_i;
 
     [Header("Task Variables")]
-    [SerializeField]
-    public ITask[] gameTasks_class_arr;
+    public GameObject[] gameTasks_go_arr;
+    public ITask[] gameTask_class_arr;
 
 #region Get Set Variables
 
@@ -33,8 +33,7 @@ public class GameManager : MonoBehaviour
     {
         instance_class = this;
         p_eventSystem_class = gameObject.GetComponent<GameEventSystem>();
-
-        gameTasks_class_arr = FindObjectsOfType<MonoBehaviour>().OfType<ITask>().ToArray();
+        gameTask_class_arr = FindObjectsOfType<MonoBehaviour>().OfType<ITask>().ToArray();
     }
 
     private void Update()
@@ -45,18 +44,19 @@ public class GameManager : MonoBehaviour
 
     IEnumerator GameProcess()
     {
-        yield return new WaitForSeconds(1);
 
         while(gameActive_b)
         {
-            
-        }
+            if(!GameEventSystem.eventActive_b)
+            {
+                p_eventSystem_class.InvokeRandomEvent();
+            }
 
-        /*
-        if(!GameEventSystem.eventActive_b)
-        {
-            p_eventSystem_class.InvokeRandomEvent();
+            int ranInt_i = Random.Range(0, gameTask_class_arr.Length - 1);
+            gameTask_class_arr[ranInt_i].ActivateTask();
+            Debug.Log("Task Num Activated: " + ranInt_i);
+
+            yield return new WaitForSeconds(30);
         }
-        */
     }
 }

@@ -4672,7 +4672,7 @@ GameObject:
   - component: {fileID: 7757964558133223679}
   m_Layer: 0
   m_Name: ElectricalTask
-  m_TagString: Untagged
+  m_TagString: Task
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -4706,6 +4706,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   selectedObjectType_e: 0
+  locationInShip: 0
   taskActive_b: 1
   electricalBoxBroken_go: {fileID: 7757964558473643165}
   electricalBoxFixed_go: {fileID: 7757964559915400409}

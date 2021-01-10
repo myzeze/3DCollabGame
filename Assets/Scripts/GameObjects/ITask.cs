@@ -1,7 +1,8 @@
 ﻿public interface ITask
 {
-    void InteractTask();
+    int GetPriority();
 
+    void InteractTask();
     void ActivateTask();
-    void CompletedTask();
+    void CompleteTask();
 }

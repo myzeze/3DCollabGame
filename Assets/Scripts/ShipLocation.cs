@@ -7,5 +7,7 @@
     Reactor,
     LeftEngine,
     RightEngine,
-    Storage
+    Storage,
+    LeftHallway,
+    RightHallway
 }

@@ -15,7 +15,6 @@ public enum ObjectTypes
     Equipment
 }
 
-
 public class ObjectType : MonoBehaviour
 {
     [Header("Object Type")]

@@ -16,6 +16,15 @@ public class MainMenu : MonoBehaviour
 
     /// do not change !!!
     /// <summary>
+    /// Load the Main Menu Scene
+    /// </summary>
+    public void MainMenuPage()
+    {
+        SceneManager.LoadScene("MainMenu");
+    }
+
+    /// do not change !!!
+    /// <summary>
     /// Load the Settings Scene
     /// </summary>
     public void SettingsPage()

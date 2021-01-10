@@ -50,14 +50,4 @@ public class GameManager : MonoBehaviour
             eventSystem_class.InvokeRandomEvent();
         }
     }
-
-    public void AddMoney(double _moneyToAdd_d)
-    {
-        Money_d += _moneyToAdd_d;
-    }
-
-    public void AddScore(int _scoreToAdd_i)
-    {
-        Score_i += _scoreToAdd_i;
-    }
 }

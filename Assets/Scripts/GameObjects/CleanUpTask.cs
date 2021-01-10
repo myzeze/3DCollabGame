@@ -5,20 +5,11 @@ using UnityEngine;
 public class CleanUpTask : ObjectType, ITask 
 {   
     [Header("General Variables")]
-    public bool taskActive_b;
-    private int p_taskPriority_i;
-
-    [Header("GameObject Variables")]
     public GameObject[] cleanableObjects_arr;
 
-    private void Awake()
+    public void InteractTask()
     {
-        ActivateTask();
-    }
-
-    public int GetPriority()
-    {
-        return p_taskPriority_i;
+        Debug.Log("Initiating Task: Clean-Up");
     }
 
     public void ActivateTask()
@@ -29,21 +20,15 @@ public class CleanUpTask : ObjectType, ITask
         }
     }
 
-    public void InteractTask()
-    {
-        if(taskActive_b)
-        {
-            Debug.Log("Started Clean-Up Task");     // --- REMOVE
-            CompleteTask();            
-        }
-    }
-
-    public void CompleteTask()
+    public void CompletedTask()
     {
         foreach (GameObject cleanableObject in cleanableObjects_arr)
         {
             cleanableObject.SetActive(false);
         }
-        Debug.Log("Finished Clean-Up Task");    // --- REMOVE
+    }
+
+    private void OnTriggerEnter(Collider col){
+        CompletedTask();
     }
 }

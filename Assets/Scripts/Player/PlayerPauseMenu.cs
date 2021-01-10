@@ -5,17 +5,14 @@ using UnityEngine.SceneManagement;
 public class PlayerPauseMenu : MonoBehaviour
 {
     [Header("UI Variables")]
+    public GameObject PauseMenu_go;    
     private static bool p_gameIsPaused_b;
-    public GameObject PauseMenu_go;
-
-
-
 
     void Start()
     {
         Cursor.visible = true;
-        GameObject varGameObject = GameObject.Find("Player");
-        varGameObject.GetComponent<Player1Movement>().enabled = true;
+        GameObject playerComponent_go = GameObject.Find("Player");
+        playerComponent_go.GetComponent<Player1Movement>().enabled = true;
     }
 
     void Update()
@@ -28,7 +25,6 @@ public class PlayerPauseMenu : MonoBehaviour
         }
     }
 
-
     void PauseGame()
     {
         if (p_gameIsPaused_b)
@@ -40,12 +36,6 @@ public class PlayerPauseMenu : MonoBehaviour
 
             GameObject getPlayerMoveScript_go = GameObject.Find("Player");
             getPlayerMoveScript_go.GetComponent<Player1Movement>().enabled = false;
-            
-
-
-            
-
-
         }
         else
         {
@@ -55,13 +45,12 @@ public class PlayerPauseMenu : MonoBehaviour
             Cursor.lockState = CursorLockMode.Locked;
             GameObject getPlayerMoveScript_go = GameObject.Find("Player");
             getPlayerMoveScript_go.GetComponent<Player1Movement>().enabled = true;
-
         }
     }
+
     void ResumeGame()
     {
         PauseMenu_go.SetActive(false);
-
     }
 
     void Paused()
@@ -70,13 +59,9 @@ public class PlayerPauseMenu : MonoBehaviour
         p_gameIsPaused_b = true;
     }
 
-
     public void LoadMainMenu()
     {
         SceneManager.LoadScene("MainMenu");
-        
-
-        //Debug.Log("testLoadMainMenuButton");
     }
 
     public void Continue()
@@ -93,5 +78,4 @@ public class PlayerPauseMenu : MonoBehaviour
     {
         Application.Quit();
     }
-
 }

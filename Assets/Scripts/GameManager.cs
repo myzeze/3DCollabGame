@@ -8,7 +8,7 @@ public class GameManager : MonoBehaviour
 
     [Header("Class Variables")]
     public static GameManager instance_class;
-    private GameEventSystem eventSystem_class;
+    private GameEventSystem p_eventSystem_class;
 
     private double p_money_d;
     private int p_score_i;
@@ -20,11 +20,6 @@ public class GameManager : MonoBehaviour
         get { return p_money_d; }
         set { p_money_d = value;}
     }
-    public int Score_i
-    {
-        get { return p_score_i; }
-        set { p_score_i = value; }
-    }
 #endregion
 
 #region Unity Functions
@@ -32,7 +27,7 @@ public class GameManager : MonoBehaviour
     private void Start()
     {
         instance_class = this;
-        eventSystem_class = gameObject.GetComponent<GameEventSystem>();
+        p_eventSystem_class = gameObject.GetComponent<GameEventSystem>();
     }
 
     private void Update()
@@ -47,7 +42,7 @@ public class GameManager : MonoBehaviour
 
         if(!GameEventSystem.eventActive_b)
         {
-            eventSystem_class.InvokeRandomEvent();
+            p_eventSystem_class.InvokeRandomEvent();
         }
     }
 }

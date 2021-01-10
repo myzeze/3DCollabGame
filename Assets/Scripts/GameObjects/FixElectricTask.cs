@@ -6,7 +6,6 @@ public class FixElectricTask : ObjectType, ITask
 {
     [Header("General Variables")]
     public bool taskActive_b;
-
     private int p_taskPriority_i;
 
     [Header("GameObject Variables")]
@@ -21,9 +20,13 @@ public class FixElectricTask : ObjectType, ITask
         ActivateTask();
     }
 
+    public int GetPriority()
+    {
+        return p_taskPriority_i;
+    }
+
     public void ActivateTask()
     {
-        taskActive_b = true;
         electricalBoxFixed_go.SetActive(false);
 
         electricalBoxBroken_go.SetActive(true);
@@ -32,10 +35,8 @@ public class FixElectricTask : ObjectType, ITask
 
     public void InteractTask()
     {
-        if(taskActive_b)
-        {
-            CompleteTask();            
-        }
+
+        CompleteTask();
     }
 
     public void CompleteTask()
@@ -43,8 +44,6 @@ public class FixElectricTask : ObjectType, ITask
         electricalBoxBroken_go.SetActive(false);
         electricalBoxFixed_go.SetActive(true);
         electricEffect_ps.Stop();
-
-        taskActive_b = false;
 
         Debug.Log("Electrical Task Finished");      // --- REMOVE
     }

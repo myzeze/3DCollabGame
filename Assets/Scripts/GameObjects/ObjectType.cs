@@ -20,10 +20,4 @@ public class ObjectType : MonoBehaviour
 {
     [Header("Object Type")]
     public ObjectTypes selectedObjectType_e;
-    public ShipLocations selectedLocationInShip_class;
-
-    public ShipLocations GetLocation()
-    {
-        return selectedLocationInShip_class;
-    }
 }

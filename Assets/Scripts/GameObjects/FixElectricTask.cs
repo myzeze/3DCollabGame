@@ -12,8 +12,11 @@ public class FixElectricTask : ObjectType, ITask
     public GameObject electricalBoxBroken_go;
     public GameObject electricalBoxFixed_go;
 
+    private ParticleSystem electricEffect_ps;
+
     private void Awake()
     {
+        electricEffect_ps = electricalBoxBroken_go.GetComponentInChildren<ParticleSystem>();
         ActivateTask();
     }
 
@@ -24,19 +27,24 @@ public class FixElectricTask : ObjectType, ITask
 
     public void ActivateTask()
     {
-       electricalBoxBroken_go.SetActive(true);
-       electricalBoxFixed_go.SetActive(false);
+        electricalBoxFixed_go.SetActive(false);
+
+        electricalBoxBroken_go.SetActive(true);
+        electricEffect_ps.Play();
     }
 
     public void InteractTask()
     {
-        electricalBoxBroken_go.SetActive(false);
-        electricalBoxFixed_go.SetActive(true);
+
         CompleteTask();
     }
 
     public void CompleteTask()
     {
+        electricalBoxBroken_go.SetActive(false);
+        electricalBoxFixed_go.SetActive(true);
+        electricEffect_ps.Stop();
+
         Debug.Log("Electrical Task Finished");      // --- REMOVE
     }
 }

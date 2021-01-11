@@ -1043,6 +1043,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9a6610d2e704f1648819acc8d7460285, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  CollisionTag: 
+  Event: event:/GameplayMusic
+  PlayEvent: 1
+  StopEvent: 2
+  AllowFadeout: 1
+  TriggerOnce: 0
+  Preload: 0
+  Params: []
+  OverrideAttenuation: 0
+  OverrideMinDistance: 0
+  OverrideMaxDistance: 0
 --- !u!114 &164726260
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4801,6 +4812,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 86c6556701af9e04380698b89f691b6e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  attenuationObject: {fileID: 0}
+  ListenerNumber: -1
 --- !u!1001 &970227528
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -5848,6 +5861,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9a6610d2e704f1648819acc8d7460285, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  CollisionTag: 
+  Event: 
+  PlayEvent: 0
+  StopEvent: 0
+  AllowFadeout: 1
+  TriggerOnce: 0
+  Preload: 0
+  Params: []
+  OverrideAttenuation: 0
+  OverrideMinDistance: -1
+  OverrideMaxDistance: -1
 --- !u!65 &1156906747
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -8451,7 +8475,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 067b446d4abcdd9429489ce7fbac7c5f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  player_t: {fileID: 0}
+  player_t: {fileID: 164726258}
 --- !u!1001 &1810810994
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -9493,6 +9517,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 86c6556701af9e04380698b89f691b6e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  attenuationObject: {fileID: 0}
+  ListenerNumber: -1
 --- !u!81 &2030811267
 AudioListener:
   m_ObjectHideFlags: 0

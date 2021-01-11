@@ -86,7 +86,8 @@ public class PlayerInteraction : MonoBehaviour
                 if(!grabIcon_go.activeSelf) grabIcon_go.SetActive(true);
 
                 if(Input.GetButtonDown("Interact")){
-                    Debug.Log("Interacted with " + objType_class.selectedObjectType_e.ToString());                    
+                    Debug.Log("Interacted with " + objType_class.selectedObjectType_e.ToString());
+                    FMODUnity.RuntimeManager.PlayOneShot("event:/PickUp"); 
                     switch (objType_class.selectedObjectType_e)
                     {
                     case ObjectTypes.Task:

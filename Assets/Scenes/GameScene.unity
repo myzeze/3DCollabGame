@@ -829,12 +829,12 @@ PrefabInstance:
     - target: {fileID: 2633882837834363464, guid: 8d8135b9418d4b44ab9093aeb1e80a72,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 9.451
+      value: 9.417
       objectReference: {fileID: 0}
     - target: {fileID: 2633882837834363464, guid: 8d8135b9418d4b44ab9093aeb1e80a72,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 4.64
+      value: 4.674
       objectReference: {fileID: 0}
     - target: {fileID: 2633882837834363464, guid: 8d8135b9418d4b44ab9093aeb1e80a72,
         type: 3}
@@ -1174,20 +1174,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9a6610d2e704f1648819acc8d7460285, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  CollisionTag: 
-  Event: event:/GameplayMusic
-  PlayEvent: 1
-  StopEvent: 2
-  AllowFadeout: 1
-  TriggerOnce: 0
-  Preload: 0
-  Params: []
-  OverrideAttenuation: 0
-  OverrideMinDistance: 0
-  OverrideMaxDistance: 0
-  hasTriggered: 0
-  isQuitting: 0
-  isOneshot: 0
 --- !u!114 &164726260
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1246,9 +1232,9 @@ CharacterController:
   m_Enabled: 1
   serializedVersion: 2
   m_Height: 1
-  m_Radius: 0.5
+  m_Radius: 0.25
   m_SlopeLimit: 45
-  m_StepOffset: 0.3
+  m_StepOffset: 0.1
   m_SkinWidth: 0.08
   m_MinMoveDistance: 0.001
   m_Center: {x: 0, y: 0, z: 0}
@@ -1280,37 +1266,37 @@ PrefabInstance:
     - target: {fileID: 2633882837834363464, guid: 8d8135b9418d4b44ab9093aeb1e80a72,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -9.34
+      value: -12.053
       objectReference: {fileID: 0}
     - target: {fileID: 2633882837834363464, guid: 8d8135b9418d4b44ab9093aeb1e80a72,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 3.138
+      value: 4.773
       objectReference: {fileID: 0}
     - target: {fileID: 2633882837834363464, guid: 8d8135b9418d4b44ab9093aeb1e80a72,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: -13.31
+      value: -7.276
       objectReference: {fileID: 0}
     - target: {fileID: 2633882837834363464, guid: 8d8135b9418d4b44ab9093aeb1e80a72,
         type: 3}
       propertyPath: m_LocalRotation.x
-      value: 0.09229602
+      value: 0.5
       objectReference: {fileID: 0}
     - target: {fileID: 2633882837834363464, guid: 8d8135b9418d4b44ab9093aeb1e80a72,
         type: 3}
       propertyPath: m_LocalRotation.y
-      value: 0.4304593
+      value: 0.5
       objectReference: {fileID: 0}
     - target: {fileID: 2633882837834363464, guid: 8d8135b9418d4b44ab9093aeb1e80a72,
         type: 3}
       propertyPath: m_LocalRotation.z
-      value: 0.70105743
+      value: 0.5
       objectReference: {fileID: 0}
     - target: {fileID: 2633882837834363464, guid: 8d8135b9418d4b44ab9093aeb1e80a72,
         type: 3}
       propertyPath: m_LocalRotation.w
-      value: 0.5609855
+      value: 0.5
       objectReference: {fileID: 0}
     - target: {fileID: 2633882837834363464, guid: 8d8135b9418d4b44ab9093aeb1e80a72,
         type: 3}
@@ -1320,17 +1306,17 @@ PrefabInstance:
     - target: {fileID: 2633882837834363464, guid: 8d8135b9418d4b44ab9093aeb1e80a72,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
-      value: -30
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2633882837834363464, guid: 8d8135b9418d4b44ab9093aeb1e80a72,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.y
-      value: 45
+      value: 90
       objectReference: {fileID: 0}
     - target: {fileID: 2633882837834363464, guid: 8d8135b9418d4b44ab9093aeb1e80a72,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
-      value: 90.00001
+      value: 90
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8d8135b9418d4b44ab9093aeb1e80a72, type: 3}
@@ -4744,6 +4730,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   gameActive_b: 1
+  gameTasks_go_arr: []
 --- !u!4 &691124723
 Transform:
   m_ObjectHideFlags: 0
@@ -5505,20 +5492,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9a6610d2e704f1648819acc8d7460285, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  CollisionTag: 
-  Event: event:/GameplayMusic
-  PlayEvent: 1
-  StopEvent: 2
-  AllowFadeout: 1
-  TriggerOnce: 0
-  Preload: 0
-  Params: []
-  OverrideAttenuation: 0
-  OverrideMinDistance: 0
-  OverrideMaxDistance: 0
-  hasTriggered: 0
-  isQuitting: 0
-  isOneshot: 0
 --- !u!1001 &810276212
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -6158,7 +6131,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 963194225}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.043, y: 1.862, z: -0.08}
+  m_LocalPosition: {x: -0.043, y: 1.721, z: -0.019}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 164726258}
@@ -6176,10 +6149,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 86c6556701af9e04380698b89f691b6e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  rigidBody: {fileID: 0}
-  rigidBody2D: {fileID: 0}
-  attenuationObject: {fileID: 0}
-  ListenerNumber: -1
 --- !u!1001 &970227528
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -6880,12 +6849,12 @@ PrefabInstance:
     - target: {fileID: 2633882837834363464, guid: 8d8135b9418d4b44ab9093aeb1e80a72,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: -1.955
+      value: -1.897
       objectReference: {fileID: 0}
     - target: {fileID: 2633882837834363464, guid: 8d8135b9418d4b44ab9093aeb1e80a72,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: -3.7130013
+      value: -3.635
       objectReference: {fileID: 0}
     - target: {fileID: 2633882837834363464, guid: 8d8135b9418d4b44ab9093aeb1e80a72,
         type: 3}
@@ -7398,20 +7367,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9a6610d2e704f1648819acc8d7460285, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  CollisionTag: 
-  Event: event:/GameplayMusic
-  PlayEvent: 1
-  StopEvent: 2
-  AllowFadeout: 1
-  TriggerOnce: 0
-  Preload: 0
-  Params: []
-  OverrideAttenuation: 0
-  OverrideMinDistance: 0
-  OverrideMaxDistance: 0
-  hasTriggered: 0
-  isQuitting: 0
-  isOneshot: 0
 --- !u!65 &1156906747
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -12363,10 +12318,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 86c6556701af9e04380698b89f691b6e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  rigidBody: {fileID: 0}
-  rigidBody2D: {fileID: 0}
-  attenuationObject: {fileID: 0}
-  ListenerNumber: -1
 --- !u!81 &2030811267
 AudioListener:
   m_ObjectHideFlags: 0
@@ -23985,9 +23936,9 @@ MeshCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 4
-  m_Convex: 1
+  m_Convex: 0
   m_CookingOptions: 30
-  m_Mesh: {fileID: 43600221996962494, guid: e87fa03b44bcf224f971597139a2dd85, type: 2}
+  m_Mesh: {fileID: 43065910384932372, guid: 789087e9126dcfa4b8167f6d81243c4c, type: 2}
 --- !u!64 &9168778406235988509
 MeshCollider:
   m_ObjectHideFlags: 0
